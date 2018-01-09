@@ -1,4 +1,4 @@
-### Class profile::tnd::admin
+### Class profile::tng::admin
 # Setup TNG Go application
 
 class profile::tng::go(
@@ -23,6 +23,13 @@ class profile::tng::go(
         ensure => directory,
     }
 
+    file {'/mnt/data/www/tng.cambridge.edu.au/config/site.php':
+        ensure => file,
+	owner  => 'ec2-user',
+	group  => 'ec2-user',
+	mode   => '0644',
+	source => 'puppet:///modules/tng_site/site.php',
+    }
     # package {'cup-tng-go':
     #     ensure => 'present',
     # }
