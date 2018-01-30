@@ -1,4 +1,4 @@
-### Class profile::tnd::admin
+### Class profile::tng::admin
 # Setup TNG Admin application
 
 class profile::tng::admin(
