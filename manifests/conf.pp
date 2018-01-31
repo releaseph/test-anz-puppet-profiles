@@ -3,7 +3,7 @@
 
 class profile::conf{
     exec {'download config repo':
-        command => 'git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/module/tng_conf/',
+        command => 'git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/module/tng/',
     }
 #	file { '/mnt/data/www/tng.cambridge.edu.au/config/site.php':
 #             ensure => file,
