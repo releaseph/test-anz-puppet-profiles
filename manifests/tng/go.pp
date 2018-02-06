@@ -23,9 +23,6 @@ class profile::tng::go(
         ensure => directory,
     }
 
-#    exec {'download config repo':
-#        command => 'git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/module/tng_conf/',
-#    }~>
 	file { '/mnt/data/www/tng.cambridge.edu.au/config/site.php':
              ensure => file,
              owner  => 'ec2-user',
