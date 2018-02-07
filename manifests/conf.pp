@@ -4,6 +4,7 @@
 class profile::conf{
     file {'/etc/puppetlabs/code/modules/tng_conf/':
 		ensure => 'absent',
+		backup => false,
 	}~>
 	exec {'download config repo':
         command => '/usr/bin/git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/',
