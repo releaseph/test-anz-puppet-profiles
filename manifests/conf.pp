@@ -2,7 +2,10 @@
 # Download Conf Repo
 
 class profile::conf{
-    exec {'download config repo':
+    file {'/etc/puppetlabs/code/modules/tng_conf/':
+		ensure => 'absent',
+	}~>
+	exec {'download config repo':
         command => '/usr/bin/git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/',
     }
 #	file { '/mnt/data/www/tng.cambridge.edu.au/config/site.php':
