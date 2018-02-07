@@ -2,13 +2,13 @@
 # Download Conf Repo
 
 class profile::conf{
-#    file {'/etc/puppetlabs/code/modules/tng_conf/':
-#		ensure => 'absent',
-#		force => true,
-#	}~>
+    file {'/etc/puppetlabs/code/modules/tng_conf/':
+		ensure => 'absent',
+		force => true,
+	}~>
 	exec {'download config repo':
         command => '/usr/bin/git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/',
-#		refreshonly => 'true',
+		refreshonly => 'true',
     }
 #	file { '/mnt/data/www/tng.cambridge.edu.au/config/site.php':
 #             ensure => file,
