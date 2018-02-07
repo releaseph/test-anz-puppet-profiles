@@ -29,8 +29,8 @@ class profile::tng::go {
              owner  => 'ec2-user',
              group  => 'ec2-user',
              mode   => '0644',
-#             source => 'puppet:///modules/tng_conf/site.php',
-			 source => 'file:/etc/puppetlabs/code/modules/tng_conf/files/site.php',
+             source => 'puppet:///modules/tng_conf/site.php',
+#			 source => 'file:/etc/puppetlabs/code/modules/tng_conf/files/site.php',
 			}
     # package {'cup-tng-go':
     #     ensure => 'present',
