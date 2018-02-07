@@ -1,9 +1,10 @@
 ### Class profile::tng::go
 # Setup TNG Go application
 
-class profile::tng::go(
-    $url = hiera('tng::go::url'),
-) {
+#class profile::tng::go(
+#    $url = hiera('tng::go::url'),
+#) {
+class profile::tng::go {
     include ::profile::tng::apache
     include ::profile::base::tdrepo
 
