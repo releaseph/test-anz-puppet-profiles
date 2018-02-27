@@ -1,5 +1,5 @@
 ### Class profile::conf
-# Download Conf Repo
+### Clone TNG Config Repo
 
 class profile::conf{
     file {'/etc/puppetlabs/code/modules/tng_conf/':
@@ -10,11 +10,4 @@ class profile::conf{
         command => '/usr/bin/git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/files/',
 		refreshonly => 'true',
     }
-#	file { '/mnt/data/www/tng.cambridge.edu.au/config/site.php':
-#             ensure => file,
-#             owner  => 'ec2-user',
-#             group  => 'ec2-user',
-#             mode   => '0644',
-#             source => 'puppet:///modules/tng_conf/site.php',
-#			}
 }

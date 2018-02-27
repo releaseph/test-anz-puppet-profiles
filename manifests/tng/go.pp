@@ -1,24 +1,9 @@
 ### Class profile::tng::go
-# Setup TNG Go application
+### Copy/Replace conf file from master to client
 
-#class profile::tng::go(
-#    $url = hiera('tng::go::url'),
-#) {
+
 class profile::tng::go {
-#    include ::profile::tng::apache
-#    include ::profile::base::tdrepo
 
-#    apache::vhost {$url:
-#        port        => '80',
-#        docroot     => '/mnt/data/www/tng.cambridge.edu.au',
-#        directories => [{
-#            path           => '/mnt/data/www/tng.cambridge.edu.au',
-#            options        => ['Indexes','FollowSymLinks'],
-#            allow_override => ['All'],
-#            order          => 'Allow,Deny',
-#            allow          => 'from all',
-#        }],
-#    }
 
     file {'/mnt/data/www/tng.cambridge.edu.au':
         ensure => directory,
@@ -30,10 +15,5 @@ class profile::tng::go {
              group  => 'ec2-user',
              mode   => '0644',
              source => 'puppet:///modules/tng_conf/site.php',
-#			 source => 'file:/etc/puppetlabs/code/modules/tng_conf/files/site.php',
 			}
-    # package {'cup-tng-go':
-    #     ensure => 'present',
-    # }
-
 }
