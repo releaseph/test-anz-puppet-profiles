@@ -16,4 +16,12 @@ class profile::tng::go {
              mode   => '0644',
              source => 'puppet:///modules/tng_conf/site.php',
 			}
+	
+	file { '/etc/httpd/conf.d/academic.conf':
+             ensure => file,
+             owner  => 'ec2-user',
+             group  => 'ec2-user',
+             mode   => '0644',
+             source => 'puppet:///modules/tng_conf/academic.conf',
+			}
 }
