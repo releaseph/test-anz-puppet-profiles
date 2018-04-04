@@ -6,8 +6,8 @@ class profile::conf{
 		ensure => 'absent',
 		force => true,
 	}~>
-	exec {'download config repo':
-        command => '/usr/bin/git clone https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/files/',
+	exec {'download config repo for Staging':
+        command => '/usr/bin/git clone -b test https://github.com/releaseph/test-anz.git /etc/puppetlabs/code/modules/tng_conf/files/',
 		refreshonly => 'true',
     }
 }
