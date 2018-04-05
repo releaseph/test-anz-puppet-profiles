@@ -1,8 +1,8 @@
-### Class profile::tng::go for STAGING
+### Class profile::tng::go for LIVE
 ### Copy/Replace conf file from master to client
 
 
-class profile::tng::go {
+class profile::tng::go_live {
 
     file {'/mnt/data/www/tng.cambridge.edu.au':
         ensure => directory,
@@ -13,7 +13,7 @@ class profile::tng::go {
              owner  => 'ec2-user',
              group  => 'ec2-user',
              mode   => '0644',
-             source => 'puppet:///modules/tng_conf/site.php',
+             source => 'puppet:///modules/tng_conf_live/site.php',
 			}
 	
 	file { '/etc/httpd/conf.d/academic.conf':
